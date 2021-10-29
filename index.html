@@ -13,41 +13,46 @@
     </head>
     <body>
 
+        <div id="root">
+            <div class="container">
+                <div class="preview">
+                    <div class="preview__item active">
+                        <img :src="slides[contatore].item">
+                        <div class="text">
+                            <h2>{{slides[contatore].title}}</h2>
+                            <p>{{slides[contatore].text}}</p>
+                        </div>
+                    </div>
+                </div>
 
-        <div id="root" class="container">
-            <div class="preview">
-                <div class="preview__item active">
-                    <img :src="slides[contatore].item">
-                    <div class="text">
-                        <h2>{{slides[contatore].title}}</h2>
-                        <p>{{slides[contatore].text}}</p>
+
+                <div class="thumbs">
+
+                    <img :src="slide.item" alt=""
+                        class="thumb_image darker"
+                        v-for="(slide, index) in slides"
+                        v-if="contatore != index">
+
+                    <img :src="slide.item" alt="" class="thumb_image
+                        activeThumb"
+                        v-else>
+
+                    <div class="navigator">
+                        <div class="prev" @click="scroll_up">
+                            <i class="fas fa-chevron-up"></i>
+                        </div>
+                        <div class="next" @click="scroll_down">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
                     </div>
                 </div>
             </div>
-
-
-            <div class="thumbs">
-
-                <img :src="slide.item" alt=""
-                    class="thumb_image darker"
-                    v-for="(slide, index) in slides"
-                    v-if="contatore != index">
-
-                <img :src="slide.item" alt="" class="thumb_image activeThumb"
-                    v-else>
-
-                <div class="navigator">
-                    <div class="prev" @click="scroll_up">
-                        <i class="fas fa-chevron-up"></i>
-                    </div>
-                    <div class="next" @click="scroll_down">
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                </div>
-
-
+            <div class="slideshow" @click="play">
+                <h3>Slideshow</h3>
+                <p>click again to stop</p>
             </div>
         </div>
+
 
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
         <script src="./assets/js/main.js"></script>

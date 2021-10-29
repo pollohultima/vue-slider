@@ -6,6 +6,8 @@ const app = new Vue({
 
         contatore: 0,
 
+        slideshow: false,
+
         slides:
             [
                 {
@@ -55,8 +57,17 @@ const app = new Vue({
             else {
                 this.contatore = this.contatore - 1;
             }
+        },
+
+
+        play: function () {
+            if (this.slideshow == false) {
+                this.slideshow = setInterval(this.scroll_down, 3 * 1000)
+            } else {
+                clearInterval(this.slideshow);
+                this.slideshow = false
+            }
         }
+
     }
-
-
 })

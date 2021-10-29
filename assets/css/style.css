@@ -79,3 +79,12 @@
     text-align: right;
     font-size: 1.1rem;
 }
+
+.slideshow {
+    width: 180px;
+    text-align: center;
+    margin: 2rem auto;
+    background-color: cornflowerblue;
+    border-radius: 20px;
+    padding: 10px;
+}
