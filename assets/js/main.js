@@ -4,7 +4,7 @@ const app = new Vue({
 
     data: {
 
-
+        contatore: 0,
 
         slides:
             [
@@ -38,9 +38,17 @@ const app = new Vue({
 
     method: {
 
+        scroll_down: function () {
 
+            this.contatore++;
 
+        },
 
+        scroll_up: function () {
+
+            this.contatore--;
+
+        }
     }
 
 
