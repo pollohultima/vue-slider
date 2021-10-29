@@ -28,8 +28,13 @@
 
             <div class="thumbs">
 
-                <img :src="slide.item" alt="" class="thumb_image" v-for="slide
-                    in slides">
+                <img :src="slide.item" alt=""
+                    class="thumb_image darker"
+                    v-for="(slide, index) in slides"
+                    v-if="contatore != index">
+
+                <img :src="slide.item" alt="" class="thumb_image activeThumb"
+                    v-else>
 
                 <div class="navigator">
                     <div class="prev" @click="scroll_up">

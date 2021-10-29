@@ -13,6 +13,7 @@
 
 .activeThumb {
     border: 4px solid white;
+    filter: none;
 }
 
 .active.preview__item {
@@ -40,6 +41,10 @@
     display: flex;
     flex-direction: column;
     position: relative;
+}
+
+.darker {
+    filter: brightness(.4);
 }
 
 .thumb_image {
