@@ -32,10 +32,10 @@
                     in slides">
 
                 <div class="navigator">
-                    <div class="prev">
+                    <div class="prev" @click="scroll_up">
                         <i class="fas fa-chevron-up"></i>
                     </div>
-                    <div class="next" v-on:click="contatore=+1">
+                    <div class="next" @click="scroll_down">
                         <i class="fas fa-chevron-down"></i>
                     </div>
                 </div>

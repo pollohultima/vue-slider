@@ -36,18 +36,25 @@ const app = new Vue({
             ]
     },
 
-    method: {
+    methods: {
 
         scroll_down: function () {
-
-            this.contatore++;
+            if (this.contatore == this.slides.length - 1) {
+                this.contatore = 0;
+            }
+            else {
+                this.contatore = this.contatore + 1;
+            }
 
         },
 
         scroll_up: function () {
-
-            this.contatore--;
-
+            if (this.contatore == 0) {
+                this.contatore = this.slides.length - 1;
+            }
+            else {
+                this.contatore = this.contatore - 1;
+            }
         }
     }
 
